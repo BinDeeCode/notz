@@ -47,7 +47,8 @@ class App extends React.Component {
     axios
       .get("https://demo-api-apxmweuljq.now.sh/notes")
       .then(response => {
-        this.setState({ data: response.data, isLoaded: true }, function() {});
+        var reversed = response.data.reverse();
+        this.setState({ data: reversed, isLoaded: true }, function() {});
       })
       .catch(function(error) {
         console.log(error);
